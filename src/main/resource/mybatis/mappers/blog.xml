@@ -3,16 +3,23 @@
 
 <mapper namespace="blog">
 
-	<!-- 쿼리문 작성 --> 
+	<!-- 쿼리문 작성 -->
 
 	<insert id="insertBlog" parameterType="com.javaex.vo.BlogVo">
 		<![CDATA[
 			insert into blog
-			values( #{id},
-					#{blogTitle},
-					#{logoFile}
+			values( #{id}, #{blogTitle}, #{logoFile}
 			)
 		]]>
 	</insert>
-	
+
+	<select id="selectBlog" parameterType="String" resultType="com.javaex.vo.BlogVo">
+		<![CDATA[
+			select blogTitle,
+				   logoFile
+			from blog
+			where id = #{id}
+	        ]]>
+		</select>
+
 </mapper>
