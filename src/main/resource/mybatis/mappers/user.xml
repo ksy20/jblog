@@ -25,7 +25,7 @@
 	</select>
 
 	<!-- 블로그 유저 가져오기 -->
-	<select id="selectbUser" parameterType="String" resultType="UserVo">
+	<select id="selectbUser" parameterType="String" resultType="com.javaex.vo.UserVo">
 		<![CDATA[
 			select id,
 				   userName
