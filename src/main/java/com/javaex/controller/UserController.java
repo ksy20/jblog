@@ -51,13 +51,13 @@ public class UserController {
 		System.out.println(authUser);
 
 		if (authUser != null) { // 로그인성공
-			// 세션에 저장
+		
 			session.setAttribute("authUser", authUser);
-			// 리다이렉트 메인
+			
 			return "redirect:/";
 
 		} else { // 로그인실패
-			// 리다이렉트 로그인폼
+		
 			return "redirect:user/loginForm";
 		}
 
