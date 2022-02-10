@@ -7,11 +7,9 @@ public class BlogVo {
 	private String logoFile;
 	
 	public BlogVo() {
-		super();
 	}
 
 	public BlogVo(String id, String blogTitle, String logoFile) {
-		super();
 		this.id = id;
 		this.blogTitle = blogTitle;
 		this.logoFile = logoFile;
