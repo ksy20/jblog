@@ -18,11 +18,17 @@ public class BlogDao {
 		return sqlSession.insert("blog.insertBlog", blogVo);
 	}
 	
-	//
-	public int getBlog(String id) {
+	//블로그메인
+	public BlogVo getBlog(String id) {
 		System.out.println("[BlogDao.selectBlog()]");
 		
-		return sqlSession.insert("blog.selectBlog",id);
+		return sqlSession.selectOne("blog.selectBlog",id);
 	}
+	
+	public void insertBlog(BlogVo blogVo) {
+		sqlSession.insert("blog.insertBlog", blogVo);
+	}
+	
+	
 
 }

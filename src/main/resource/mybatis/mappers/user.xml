@@ -4,7 +4,7 @@
 <mapper namespace="user">
 
 	<!-- 회원가입 -->
-	<insert id="insertUser"  parameterType= "com.javaex.vo.UserVo" >
+	<insert id="insertUser" parameterType="com.javaex.vo.UserVo">
 		<![CDATA[
 			insert into users
 			VALUES (SEQ_USERS_NO.nextval, #{id}, #{userName}, #{password}, sysdate)
@@ -12,16 +12,26 @@
 	</insert>
 
 	<!-- 로그인 -->
-		<select id="selectUser" parameterType="com.javaex.vo.UserVo" resultType="com.javaex.vo.UserVo">
-			<![CDATA[
-				select 	userNo,
-						userName
-				from	users
-				where	id = #{id}
-				and		password = #{password}
-			]]>
-		
-		</select>
+	<select id="selectUser" parameterType="com.javaex.vo.UserVo"
+		resultType="com.javaex.vo.UserVo">
+		<![CDATA[
+			select 	userNo,
+					userName
+			from	users
+			where	id = #{id}
+			and		password = #{password}
+		]]>
 
+	</select>
+
+	<!-- 블로그 유저 가져오기 -->
+	<select id="selectbUser" parameterType="String" resultType="UserVo">
+		<![CDATA[
+			select id,
+				   userName
+			from users
+			where id = #{id}
+		]]>
+</select>
 
 </mapper>

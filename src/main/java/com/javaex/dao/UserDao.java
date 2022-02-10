@@ -28,4 +28,11 @@ public class UserDao {
 		return authUser;
 	}
 	
+	//블로그 유저 가저오기
+	public UserVo selectbUser (String id) {
+		System.out.println("[UserDao.selectbUser()]");
+		
+		return sqlSession.selectOne("user.selectbUser", id);
+	}
+	
 }
