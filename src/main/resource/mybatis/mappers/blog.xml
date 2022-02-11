@@ -20,6 +20,19 @@
 			where id = #{id}
 	    ]]>
 	</select>
+	
+	<select id="selectbUser" parameterType="String" resultType="com.javaex.vo.BlogVo">
+		<![CDATA[
+			select u.username,
+      			   b.id,
+       			   b.blogtitle,
+       			   b.logofile
+			from users u, blog b
+			where u.id = b.id
+	    ]]>
+	</select>
+	
+	
 		
 
 </mapper>

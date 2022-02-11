@@ -16,19 +16,26 @@ public class BlogService {
 	@Autowired
 	private UserDao userDao;
 
-	//블로그 유저 가져오기
+	//블로그 유저 정보 가져오기
 	public UserVo getBlogUser(String id) {
-		System.out.println("여기가 오나");
+		System.out.println("[BlogService.getBlogUser()]");
 		
 		return userDao.selectbUser(id);
 	}
 	
 	//블로그 가져오기
 	public BlogVo getBlog(String id) {
-		System.out.println("여기가 오나");
+		System.out.println("[BlogService.getBlog()]");
 		return blogDao.getBlog(id);
 		
 	}
 	
+	//블로그 유저 정보 가져오기
+	public BlogVo getbUser(BlogVo blogVo) {
+		System.out.println("[BlogService.getBlogUser()]");
+			
+		BlogVo authBlog = blogDao.selectBlog(blogVo);
+		return authBlog;
+	}
 
 }

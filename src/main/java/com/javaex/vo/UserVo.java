@@ -10,11 +10,6 @@ public class UserVo {
 	
 	public UserVo() {
 	}
-	
-	public UserVo(String id,  String password) {
-		this.id = id;
-		this.password = password;
-	}
 
 	public UserVo(int userNo, String id, String userName, String password, String joinDate) {
 		this.userNo = userNo;
